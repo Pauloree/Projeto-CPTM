@@ -1,0 +1,215 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+}
+
+header {
+    background-color: #ffffff;
+    color: #000000;
+    position: fixed; /* Mantém o cabeçalho fixo na parte superior */
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+    z-index: 1000;
+
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.main {
+    width: 100vw;
+    height: 100vh;
+    background: #f3f3f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.logo 
+{
+    padding: 10px 20px;
+    height: auto;
+    width: 15%;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-menu ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    display: block;
+}
+
+.nav-menu ul li:hover .dropdown-content {
+    display: block;
+   
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    z-index: 1;
+    color: #ffffff;
+}
+
+.dropdown-content a {
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e93333;
+    color: #ffffff;
+}
+
+.header-buttons {
+    display: flex;
+    padding: 10px 25px
+}
+
+.header-buttons .btn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #d32d2d;
+    color: #ffffff;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.header-buttons .btn:hover {
+    background-color: #e93333;
+}
+
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        display: none;
+        width: 100%;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu ul li {
+        margin: 10px 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .header-buttons {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+
+    .header-buttons .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+#demo {
+    position: relative;
+    margin: auto; /* Centraliza o carrossel */
+    max-width: 900px; /* Define uma largura máxima */
+}
+
+.carousel-inner {
+    border-radius: 10px; /* Arredonda os cantos das imagens */
+    overflow: hidden; /* Garante que nada exceda os limites do carrossel */
+}
+
+.carousel-item img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do item */
+    height: auto; /* Mantém a proporção da imagem */
+    transition: transform 0.5s ease; /* Adiciona uma transição suave */
+}
+
+.carousel-control-prev, 
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.747); /* Fundo semi-transparente para os controles */
+    border-radius: 50%; /* Controles arredondados */
+}
+
+.carousel-control-prev-icon, 
+.carousel-control-next-icon {
+    background-color: rgb(255, 18, 18); /* Ícones brancos */
+    border-radius: 20%; /* Ícones arredondados */
+    padding: 15px; /* Espaçamento interno dos ícones */
+}
+
+.carousel-indicators button {
+    background-color: rgba(121, 20, 20, 0.5); /* Indicadores semi-transparentes */
+}
+
+.carousel-indicators .active {
+    background-color: #050000; /* Indicador ativo em branco */
+}
+
+.carousel-item {
+    position: relative; /* Necessário para a legenda */
+}
+
+.carousel-caption {
+    position: relative; /* Posiciona a legenda sobre a imagem */
+    top: 55%; /* Centraliza verticalmente */
+    left: 300px; /* Alinhamento à esquerda */
+    transform: translateY(-20%); /* Ajusta a posição */
+    transform: translateX(-30%);
+    background: rgba(224, 12, 12, 0.89); /* Fundo semi-transparente */
+    color: white; /* Cor do texto */
+    padding: 15px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    max-width: 300px; /* Largura máxima da legenda */
+}
